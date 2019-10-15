@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!-- regexp
+	-->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+	<head> 
+	<title> Matcher </title>
+
+	<style type = "text/css">
+	</style>
+
+	</head>
+	<body>
+	  	<h3> Original Array </h3>
+	   <script type = "text/javascript">
+		var list = [
+		   "anyway",
+		   "bone",
+		   "cinema",
+		   "cover",
+		   "define",
+		   "economy",
+		   "eleven",
+		   "eye",
+		   "hesitate",
+		   "key",
+		   "majority",
+		   "music",
+		   "palace",
+		   "potato",
+		   "relax",
+		   "royal",
+		   "surely",
+		   "typical",
+		   "vocabulary",
+		   "water"
+		];
+		
+		var i;
+		for(i=0;i<list.length;i++){
+		   document.write(list[i] + "<br>");
+		}
+		document.write("<br>");
+		var expr = prompt("Enter a regex based on the list of words");
+
+		var matchedList = [];
+		for(i=0;i<list.length;i++){
+		   if(list[i].match(expr)!== null){
+		   	matchedList.push(list[i]);
+		   }
+		}
+
+		document.write("ARRAY OF MATCHED WORDS: <br>");
+		for(i=0;i<matchedList.length;i++){
+		   document.write(matchedList[i] + "<br>");
+		}
+		
+		document.write("<br>");
+		document.write("Expression: " + expr + "<br>");
+
+		document.write("Words Matched: " + matchedList.length);
+	   </script>
+	   
+	   
+	</body>
+</html>

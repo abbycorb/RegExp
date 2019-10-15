@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!-- regexp - third set of arrays
+	-->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+	<head> 
+	<title> Matcher2 </title>
+
+	<style type = "text/css">
+	</style>
+
+	</head>
+	<body>
+	   <script type = "text/javascript">
+		document.write("WORDS THAT ARE ALLOWED: <br>");
+		var allowed = [
+		   "fu",
+		   "tofu",
+		   "snafu"
+		];
+
+		var i;
+		for(i=0; i<allowed.length; i++){
+		   document.write(allowed[i] + "<br>");
+		}
+		document.write("<br>");
+		
+		document.write("WORDS THAT ARE NOT ALLOWED: <br>");
+		var notAllowed = [
+		   "futz",
+		   "fusillade",
+		   "functional",
+		   "discombobulated"
+		];
+		var i;
+		for(i=0; i<notAllowed.length; i++){
+		   document.write(notAllowed[i] + "<br>");
+		}
+		document.write("<br>");
+		var expr = prompt("Enter a regex that allows all of the words in the first list, but none of the words in the second list");
+
+		var count = 0;
+		var matchedList = [];
+		for(i=0; i<allowed.length; i++){
+		   if(allowed[i].match(expr) !== null){
+			matchedList.push(allowed[i]);
+			count = count + 1;
+		   }
+		}
+		
+		var countNot = 0;
+		for(i=0; i<notAllowed.length; i++){
+		   if(notAllowed[i].match(expr) !== null){
+			matchedList.push(notAllowed[i]);
+			countNot = countNot + 1;
+		   }
+		}
+		
+		document.write("ARRAY OF WORDS: <br>");
+		for(i=0; i<matchedList.length; i++){
+		   document.write(matchedList[i] + "<br>");
+		}
+
+		document.write("<br>");
+		document.write("Expression: " + expr + "<br>");
+
+		document.write("Words Total Matched: " + matchedList.length + "<br>");
+		document.write("Words allowed matched: " + count + "<br>");
+		document.write("Words not allowed: " + countNot );
+	   </script>
+	   
+	</body>
+</html>
